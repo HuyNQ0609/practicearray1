@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice 1</title>
+</head>
+<body>
+    <h1><b>Sample Screen</b></h1>
+    <input type="text" id="number"/>
+    <input type="button" value="Add" onclick="add_element_to_array()"/>
+    <input type="button" value="Display" onclick="display_array()"/>
+    <div id="result"></div>
+    <script>
+        let i = 0;
+        let array = Array();
+        function add_element_to_array() {
+            array[i] = document.getElementById("number").value;
+            alert("Element: " + array[i] + " added at index " + i);
+            i++;
+            document.getElementById("number").value ="";
+        }
+        function display_array() {
+            let e = "<hr/>";
+            for (let j = 0; j < array.length; j++) {
+                e += "Element " + j + " = " + array[j] + "<br/>";
+            }
+            document.getElementById("result").innerHTML = e;
+        }
+    </script>
+</body>
+</html>
